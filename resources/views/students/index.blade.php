@@ -2,6 +2,23 @@
 @extends('students.navbar')
 @section('content')
 
+
+{{-- JS --}}
+<script>
+    function limitNISN(input) {
+        input.value = input.value.replace(/\D/g, ''); 
+        if (input.value.length > 10) {
+            input.value = input.value.slice(0, 10); 
+        }
+    }
+    function limitNik(input) {
+        input.value = input.value.replace(/\D/g, ''); 
+        if (input.value.length > 16) {
+            input.value = input.value.slice(0, 16); 
+        }
+    }
+    </script>
+
 <!-- Formulir Pendaftaran -->
 <section id="form-pendaftaran" class="pt-5 mt-4 pb-1 py-5">
     <div class="card-header pt-5 mt-0 bg-success">
@@ -14,8 +31,9 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="nisn" class="form-label">NISN</label>
-                    <input type="number" class="form-control" id="nisn" name="nisn" placeholder="Masukkan NISN 10 Digit" required>
+                    <input type="text" class="form-control" id="nisn" name="nisn" placeholder="Masukkan NISN (10 Digit)" required oninput="limitNISN(this)" maxlength="10">
                 </div>
+                
                 <div class="col-md-6">
                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
                     <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" placeholder="Masukkan Nama Lengkap" required>
@@ -24,11 +42,11 @@
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="no_kk" class="form-label">No KK</label>
-                    <input type="number" class="form-control" id="no_kk" name="no_kk" placeholder="Masukkan No KK 16 Digit" required>
+                    <input type="number" class="form-control" id="no_kk" name="no_kk" placeholder="Masukkan No KK 16 Digit" required oninput="limitNik(this)" maxlength="16">
                 </div>
                 <div class="col-md-6">
                     <label for="nik" class="form-label">NIK</label>
-                    <input type="number" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK 16 Digit" required>
+                    <input type="number" class="form-control" id="nik" name="nik" placeholder="Masukkan NIK 16 Digit" required oninput="limitNik(this)" maxlength="16">
                 </div>
             </div>
             <div class="row mb-3">
@@ -117,13 +135,10 @@
 <section data-aos="fade-up">
     <div class="container mt-5 mb-5">
       <div class="text-center border p-4 rounded shadow-lg">
-          <!-- WhatsApp Icon -->
-          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" style="width: 100px; height: auto;">
-          <!-- Text -->
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon" style="width: 100px; height: auto;"> 
           <p class="mt-3">
               Jika anda mengalami kendala dalam pengisian formulir pendaftaran, maka hubungi kami melalui chat WhatsApp:
-          </p>
-          <!-- Button -->
+          </p>       
           <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success px-4">
               Hubungi Kami
           </a>
@@ -143,6 +158,7 @@
                 <h2 class="fw-bold text-success">DATA PENDAFTAR</h2>
             </div>
             <div class="card-body">
+
               {{-- Form Pencarian --}}
     <form method="GET" action="{{ route('students.index') }}" class="mb-3 d-flex">
         <input type="text" name="search" class="form-control me-2" placeholder="Cari Nama..." value="{{ old('search', $query ?? '') }}" style="max-width: 300px;">
@@ -171,7 +187,7 @@
                                 <td>{{ $student->sekolah_asal }}</td>
                                 <td>{{ $student->program_pilihan }}</td>
                                 <td>
-                                    {{-- Tampilkan badge berdasarkan status_verifikasi --}}
+                                    {{--  status_verifikasi --}}
                                     @if($student->status_verifikasi === 'Terverifikasi' || $student->status_verifikasi === 'Sudah Diverifikasi')
                                         <span class="badge bg-success">Sudah Terverifikasi</span>
                                     @else
@@ -188,7 +204,7 @@
     </div>
     
     
-    <!-- Pagination links -->
+  
     <div class="d-flex justify-content-center">
         {{ $students->links() }}
     </div>

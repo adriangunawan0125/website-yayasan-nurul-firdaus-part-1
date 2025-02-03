@@ -1,0 +1,1276 @@
+/* General */
+body {
+    font-family: "Poppins", sans-serif !important;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Navbar Section */
+.nav-link.btn-warning {
+    background-color: #ffc107;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-link.btn-warning:hover {
+    background-color: #f4dc00;
+    color: #212529;
+}
+
+.navbar {
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.navbar .nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+    color: #f4dc00;
+    text-decoration: none;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #00a859;
+    color: white;
+}
+/* Carousel */
+.carousel-item {
+    height: 650px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 2;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 50;
+}
+
+.yayasan-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    font-style:Roboto;
+    color: white;
+    display: inline-block;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+.address-text {
+    font-size: 1.5rem;
+    color: white;
+    font-style:Roboto;
+    padding: 25px;
+    font-weight: bold;
+    display: inline-block;
+    max-width: 90%;
+    text-align: center;
+    /* box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px); */
+    margin: 15px;
+}
+
+.carousel-caption.top-caption,
+.carousel-caption.bottom-caption {
+    text-align: center;
+    z-index: 30;
+    color: white;
+    pointer-events: none;
+    position: absolute;
+}
+
+.carousel-caption.top-caption {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.carousel-caption.bottom-caption {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    right: 0;
+    transform: translateX(0);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 30;
+    width: 100%;
+    text-align: center;
+}
+
+.carousel-caption.top-caption h5 {
+    font-size: 1.5rem;
+}
+
+.carousel-caption.bottom-caption h5 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.bg-gradient {
+    background: linear-gradient(90deg, #00a859, #00583a) !important;
+}
+
+/* Sambutan Section (animasi) */
+.animated-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sambutan Section */
+.sambutan-section {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px 20px;
+    border-radius: 10px;
+}
+
+.sambutan-section p {
+    text-align: justify;
+    padding: 30px 40px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #e9f5e0;
+    border-left: 5px solid #00583a;
+    transition: all 0.3s ease;
+
+    margin: 20px 80px 20px 80px;
+}
+
+.sambutan-section p:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sambutan-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00583a;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    position: relative;
+    /* font-family: "Playfair Display", serif; */
+}
+
+.sambutan-title span {
+    background: linear-gradient(90deg, #00a859, #007c42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sambutan-title:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+.sambutan-section .images .image-frame {
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+    border: 5px solid #007c42;
+    border-radius: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sambutan-section .images .image-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sambutan-section .images img {
+    max-width: 180px;
+    border-radius: 15px;
+}
+
+.nama-jabatan {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.nama-jabatan h3:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #004d30;
+}
+
+.nama-jabatan h3:last-child {
+    font-size: 1.3rem;
+    font-weight: normal;
+    color: #555;
+}
+
+/* Tentang Kami Section */
+.tentang-kami {
+    margin: 0;
+    padding: 20px 40px 40px;
+    text-align: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #00583a;
+}
+
+.tentang-kami-title {
+    /* font-family: "Playfair Display", serif; */
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.tentang-kami-title span {
+    background: linear-gradient(90deg, #a8e063, #ffdd00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tentang-kami-title:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+.tentang-kami .image-frame {
+    position: relative;
+    display: inline-block;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 100%;
+    width: 500px;
+    margin-top: 40px;
+}
+
+.tentang-kami .image-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tentang-kami .image-frame img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.tentang-kami p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: justify;
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    /* margin-right: 20px */
+}
+
+.tentang-kami .col-md-6 img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Tentang kami (animasi) */
+.tentang-kami.animated-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.tentang-kami.animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pengajar Section */
+.pengajar-section {
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    background-color: white;
+    padding: 40px 0;
+}
+
+.pengajar-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    /* font-family: "Playfair Display", serif; */
+    position: relative;
+    background: linear-gradient(90deg, #00a859, #007c42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pengajar-section h2:after {
+    position: relative;
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+.slider {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    gap: 30px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: #28a745 transparent;
+}
+
+.card {
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 250px;
+    height: auto;
+    margin: 0 10px;
+    background-color: #00583a;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-corner-shape: scoop;
+    border-radius: 30px;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    max-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #f1f1f1;
+    margin-top: 5px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Show More Button */
+.show-more-btn {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.show-more-btn a {
+    background-color: #00583a;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.show-more-btn a:hover {
+    background-color: #f4dc00;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+.show-more-btn span {
+    font-size: 1.2rem;
+    color: white;
+    background-color: #00583a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.show-more-btn span:hover {
+    background-color: #f4dc00;
+    color: #000000;
+    transform: scale(1.05);
+}
+
+/* Berita Section */
+.berita-section {
+    background-color: #00583a;
+    padding: 50px 0;
+    color: white;
+    transform: scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.berita-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    /* font-family: "Playfair Display", serif; */
+    position: relative;
+    background: linear-gradient(90deg, #a8e063, #ffdd00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.berita-section h2:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+.berita-section .card {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #00583a;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3),
+        0px 12px 24px rgba(0, 0, 0, 0.2),
+        inset 0px -6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.berita-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4),
+        0px 14px 28px rgba(0, 0, 0, 0.3), inset 0px -6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.berita-section .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: ;
+}
+
+.berita-section .card-body {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.berita-section .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.berita-section .card-title:hover {
+    color: #ffc107;
+    transform: translateY(-5px);
+}
+
+.berita-section .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.berita-section .card-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.berita-section .card-link:hover {
+    transform: scale(1.05);
+}
+
+.berita-section .container {
+    padding: 0 20px;
+}
+
+.berita-section .row.berita {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.berita-section .col-md-4 {
+    flex: 1 1 30%;
+    max-width: 30%;
+    margin-bottom: 30px;
+}
+
+/* Hubungi Kami */
+.hubungi-kami-section {
+    background-color: white;
+    padding: 50px 20px;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.hubungi-kami-section h2 {
+    margin-top: 30px;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    /* font-family: "Playfair Display", serif; */
+    position: relative;
+    background: linear-gradient(90deg, #00a859, #007c42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hubungi-kami-section h2:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+.hubungi-kami-section p {
+    color: #00583a;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-top: 20px;
+    text-align: justify;
+    background-color: #e9f5e0;
+    border-left: 5px solid #00583a;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.hubungi-kami-section p:hover {
+    transform: scale(1.02);
+    background-color: #d4f3c3;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hubungi-kami-section .d-flex.justify-content-center {
+    margin-top: 20px;
+}
+
+.hubungi-kami-section .d-flex.justify-content-center .btn-success {
+    background-color: #00583a;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.hubungi-kami-section .d-flex.justify-content-center .btn-success i {
+    margin-right: 10px;
+}
+
+.hubungi-kami-section .d-flex.justify-content-center .btn-success:hover {
+    background-color: #128c7e;
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Lokasi Kami Section */
+.lokasi-kami-section {
+    background-color: #00583a;
+    padding: 60px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.lokasi-kami-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lokasi-kami-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    /* font-family: "Playfair Display", serif; */
+    position: relative;
+    background: linear-gradient(90deg, #a8e063, #ffdd00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lokasi-kami-section h2:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+/* Peta */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.map-container iframe {
+    border: none;
+    border-radius: 15px;
+    width: 900px;
+    height: 500px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.map-container iframe:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Temukan Kami Section */
+.temukan-kami-section {
+    background-color: white;
+    padding: 30px 20px;
+    font-size: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.temukan-kami-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.temukan-kami-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    /* font-family: "Playfair Display", serif; */
+    position: relative;
+    background: linear-gradient(90deg, #00a859, #007c42);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.temukan-kami-section h2:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #00a859;
+    border-radius: 10px;
+}
+
+.temukan-kami-section .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.temukan-kami-section .col-md-4 {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    max-width: 320px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.temukan-kami-section.show .col-md-4 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.temukan-kami-section.show .col-md-4:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.temukan-kami-section.show .col-md-4:nth-child(2) {
+    transition-delay: 0.4s;
+}
+.temukan-kami-section.show .col-md-4:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.temukan-kami-section .col-md-4 img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.temukan-kami-section .col-md-4 h4 {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.temukan-kami-section .col-md-4 p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Media Sosial */
+.temukan-kami-section .d-flex {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.temukan-kami-section .d-flex .btn {
+    padding: 12px 25px;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.temukan-kami-section .d-flex .btn-primary {
+    background-color: #1877f2;
+    border: none;
+}
+
+.temukan-kami-section .d-flex .btn-danger {
+    background-color: #e4405f;
+    border: none;
+}
+
+.temukan-kami-section .d-flex .btn-secondary {
+    background-color: #0077b5;
+    border: none;
+}
+
+.temukan-kami-section .d-flex .btn i {
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.temukan-kami-section .d-flex .btn:hover i {
+    transform: scale(1.2);
+}
+
+.temukan-kami-section .d-flex .btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* Footer Section */
+.footer {
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 12px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+    transition: color 0.3s ease;
+}
+
+.footer p:hover {
+    color: #ffc107;
+    transform: translateY(-2px);
+}
+
+/* Box-Sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Responsive layar 768px */
+@media (max-width: 768px) {
+    /* Section umum */
+    section {
+        padding: 20px 15px;
+    }
+
+    /* Navbar */
+    nav {
+        padding: 15px 10px;
+    }
+
+    nav .navbar-brand {
+        font-size: 1.8rem;
+    }
+
+    nav .navbar-nav {
+        text-align: center;
+    }
+
+    nav .navbar-nav .nav-item {
+        margin: 10px 0;
+    }
+
+    nav .navbar-nav .nav-link {
+        font-size: 1.1rem;
+    }
+
+    /* Carousel Section */
+    .carousel-item {
+        height: auto;
+        width: 100%;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+    }
+
+    .carousel-caption.top-caption h5,
+    .carousel-caption.bottom-caption h5 {
+        font-size: 1.3rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    /* Sambutan Section */
+    .sambutan-section {
+        padding: 30px 15px;
+    }
+
+    .sambutan-section img {
+        max-width: 120px;
+    }
+
+    .sambutan-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .sambutan-section p {
+        font-size: 0.95rem;
+        margin: 0 10px;
+    }
+
+    /* Tentang Kami Section */
+    .tentang-kami .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .tentang-kami .col-md-6 img {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .tentang-kami .col-md-6 p {
+        font-size: 17px;
+        text-align: justify;
+        margin-top: 10px;
+    }
+
+    /* Pengajar Section */
+    .pengajar-section .slider {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pengajar-section .card {
+        width: 70%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    .pengajar-section .card img {
+        max-width: 80px;
+        height: auto;
+    }
+
+    /* Berita Section */
+    .berita-section .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .berita-section .col-md-4 {
+        max-width: 100%;
+    }
+
+    /* Hubungi Kami Section */
+    .hubungi-kami-section {
+        padding: 30px 15px;
+    }
+
+    .contact-box {
+        margin-bottom: 20px;
+    }
+
+    /* Lokasi Kami Section */
+    .map-container iframe {
+        width: 90%;
+        height: 300px;
+    }
+
+    /* Temukan Kami Section */
+    .temukan-kami-section .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .temukan-kami-section .col-md-4 {
+        max-width: 90%;
+    }
+
+    .temukan-kami-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .temukan-kami-section .d-flex .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Footer Section */
+    .footer p {
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+/* Responsive layar 480px */
+@media (max-width: 480px) {
+    /* Section umum */
+    section {
+        padding: 15px 10px;
+    }
+
+    /* Navbar Section */
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+    }
+
+    /* Carousel Section */
+    .carousel-item {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .carousel-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .carousel-caption.top-caption h5,
+    .carousel-caption.bottom-caption h5 {
+        font-size: 1.1rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.8rem;
+    }
+
+    /* Sambutan Section */
+    .sambutan-section {
+        padding: 20px 10px;
+    }
+
+    .sambutan-section img {
+        max-width: 120px;
+    }
+
+    .sambutan-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .sambutan-section p {
+        font-size: 0.9rem;
+        margin: 0 5px;
+    }
+
+    /* Tentang Kami Section */
+    .tentang-kami .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .tentang-kami .col-md-6 img {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .tentang-kami .col-md-6 p {
+        font-size: 0.95rem;
+        text-align: justify;
+        margin-top: 8px;
+    }
+
+    /* Pengajar Section */
+    .pengajar-section .slider {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pengajar-section .card {
+        max-width: 80%;
+        margin: 10px auto;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .pengajar-section .card img {
+        width: 100%;
+        height: auto;
+        max-width: 180px;
+    }
+
+    .pengajar-section .card h3 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Berita Section */
+    .berita-section .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .berita-section .card {
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .berita-section .card-img-top {
+        height: 150px;
+        object-fit: cover;
+    }
+
+    /* Hubungi Kami Section */
+    .hubungi-kami-section {
+        padding: 20px 10px;
+    }
+
+    .contact-box {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Lokasi Kami Section */
+    .map-container iframe {
+        width: 100%;
+        height: 250px;
+    }
+
+    /* Temukan Kami Section */
+    .temukan-kami-section .row {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .temukan-kami-section .col-md-4 {
+        max-width: 90%;
+    }
+
+    .temukan-kami-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .temukan-kami-section .d-flex .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    /* Footer Section */
+    .footer p {
+        font-size: 12px;
+        text-align: center;
+    }
+}

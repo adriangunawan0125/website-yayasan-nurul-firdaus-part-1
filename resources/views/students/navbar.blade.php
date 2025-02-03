@@ -17,19 +17,19 @@
         <div class="collapse navbar-collapse mx-auto fs-5 flex-wrap" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item mx-md-5 mx-3">
-                    <a class="nav-link active fw-bold link-success text-light" aria-current="page" href="{{url('/#jadwal')}}">JADWAL</a>
+                    <a class="nav-link active fw-bold link-success fs-6 text-light" aria-current="page" href="{{url('/Homepage#jadwal')}}">JADWAL</a>
                 </li>
                 <li class="nav-item mx-md-5 mx-3">
-                    <a class="nav-link active fw-bold link-success text-light " aria-current="page" href="{{url('/#pilihan')}}">PROGRAM</a>
+                    <a class="nav-link active fw-bold link-success fs-6 text-light " aria-current="page" href="{{url('/Homepage#pilihan')}}">PROGRAM</a>
                 </li>
                 <li class="nav-item mx-md-5 mx-3">
-                    <a class="nav-link active fw-bold link-success text-light" aria-current="page" href="#datapendaftar">DATA PENDAFTAR</a>
+                    <a class="nav-link active fw-bold link-success fs-6 text-light" aria-current="page" href="#datapendaftar">DATA PENDAFTAR</a>
                 </li>
             </ul>
-            <a href="{{url('/')}}">
-                <button type="button" class="btn btn-warning text-light fw-bold">PPDB</button>
+            <a href="{{url('/Homepage')}}">
+                <button type="button" class="fs-6 btn btn-warning text-light fw-bold">PPDB</button>
             </a>
-            {{-- <a class="nav-link active btn-success text-light fw-bold" aria-current="page" href="{{url('/')}}">PPDB</a> --}}
+            {{-- <a class="nav-link active btn-success text-light fw-bold" aria-current="page" href="{{url('/Homepage')}}">PPDB</a> --}}
         </div>
     </div>
 </nav>

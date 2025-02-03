@@ -1,10 +1,8 @@
-/* body {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s ease-out forwards;
-    padding-top:1px;
-  } */
-  
+
+  body {
+    
+    font-family: "Poppins", sans-serif !important;
+}
   .custom-rounded {
     border-radius: 15px;
   }

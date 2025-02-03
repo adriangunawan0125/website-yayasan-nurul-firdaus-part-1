@@ -57,6 +57,7 @@
                 @endforeach
             </tbody>
         </table>
+        <a href="{{ route('export.excel') }}" class="btn btn-success fw-bold">Export Excel</a>
     </div>
     
     <div class="d-flex justify-content-center mt-3">

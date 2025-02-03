@@ -20,16 +20,19 @@
             <div class="collapse navbar-collapse mx-auto fs-5 flex-wrap" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item mx-md-5 mx-3">
-                        <a class="nav-link active fw-bold link-success" aria-current="page" href="#jadwal">JADWAL</a>
+                        <a class="nav-link active fs-6 fw-bold link-success" aria-current="page" href="{{ url('/') }}">BERANDA</a>
                     </li>
                     <li class="nav-item mx-md-5 mx-3">
-                        <a class="nav-link active fw-bold link-success" aria-current="page" href="#pilihan">PROGRAM</a>
+                        <a class="nav-link active fs-6 fw-bold link-success" aria-current="page" href="#jadwal">JADWAL</a>
                     </li>
                     <li class="nav-item mx-md-5 mx-3">
-                        <a class="nav-link active fw-bold link-success" aria-current="page" href="{{ url('/students#datapendaftar') }}">DATA PENDAFTAR</a>
+                        <a class="nav-link active fs-6 fw-bold link-success" aria-current="page" href="#pilihan">PROGRAM</a>
+                    </li>
+                    <li class="nav-item mx-md-5 mx-3">
+                        <a class="nav-link active fs-6 fw-bold link-success" aria-current="page" href="{{ url('/students#datapendaftar') }}">DATA PENDAFTAR</a>
                     </li>
                 </ul>
-                <a href="{{ url('/students') }}"><button type="button" class="fw-bold btn btn-success">PPDB</button></a>
+                <a href="{{ url('/students') }}"><button type="button" class="fw-bold fs-6 btn btn-success">PPDB</button></a>
             </div>
         </div>
     </nav>

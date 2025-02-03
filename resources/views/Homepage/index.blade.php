@@ -109,12 +109,14 @@
       </div>
     </div>
   </div>
+  </section>
+  
 
   <style>
     .circle {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+      width: 350px;  /* Sesuaikan ukuran */
+      height: 350px;
+      border-radius: 30px 70px 30px 70px;
       overflow: hidden;
       margin: auto;
     }
@@ -125,12 +127,12 @@
       object-fit: cover;
     }
 
+
     .row > .col-md-4 {
       padding-top: 10px;
       padding-bottom: 10px;
     }
   </style>
-</section>
 
 <!-- Footer -->
 <footer class="bg-footer fw-bold text-white py-5">

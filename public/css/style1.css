@@ -1,0 +1,440 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden; 
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background-color: #00583a; 
+    color: black; 
+}
+body {
+    padding-top: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Section */
+.bg-gradient {
+    background: linear-gradient(90deg, #00a859, #00583a) !important;
+    /* color: white; */
+}
+.nav-link.btn-warning {
+    background-color: #ffc107;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+.nav-link.btn-warning:hover {
+    background-color: #f4dc00;
+    color: #212529;
+}
+
+.navbar {
+    padding-left: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.navbar .nav-link {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+    color: #f4dc00;
+    text-decoration: none;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #00a859;
+    color: white;
+}
+
+/* Profil Sekolah */
+.header{
+    background-image: linear-gradient(rgba(0, 88, 58, 0.8), rgba(0, 88, 58, 0.8)), url('/images/foto1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 60%;  
+    width: 100%;
+    max-width: 100%;
+    height: auto; 
+    object-fit: cover;
+}
+
+.profile-section {
+    background-color: #7AA899;
+    padding: 10px;
+    text-align: center;
+}
+
+.profile-section .card-visi-misi{
+    width: 90%;
+    max-width: 80%;
+    margin: 10px auto;
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
+} 
+
+.card-visi-misi:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.card-title-profil {
+    font-weight: bold;
+    color: #00583a;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.5s ease-in-out;
+}
+
+
+.card-visi-misi ol li {
+    margin-bottom: 10px; 
+    line-height: 1.5;
+    font-size: 18px;
+    color: #333;
+    text-align: justify;
+}
+
+.card-visi-misi p {
+    font-size: 18px; 
+    text-align: center
+}
+
+/* Animasi Visi Misi */
+@keyframes rotateY-reverse {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-180deg); } 
+}
+
+.icon-rotate {
+    font-size: 1em;
+    transition: transform 0.5s ease-in-out, color 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.card-visi-misi:hover .icon-rotate {
+    animation: rotateY-reverse 0.8s ease-in-out forwards; /* Hanya sekali dan tetap pada posisi akhir */
+}
+
+
+/* Sejarah */
+.sejarah-section {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+}
+.sejarah-section h2 {
+    font-weight: bold;
+    color: #056839;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    
+}
+
+.sejarah-section .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+.image-container {
+    width: 100%;
+    max-height: 450px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.content {
+    max-width: 600px;
+}
+
+.content p {
+    line-height: 1.6;
+    font-size: 1rem;
+    color: #555;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+/* Guru Section */
+.guru-section {
+    background-color: #00583a;
+    padding: 50px 20px;
+}
+.guru-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f4dc00;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.guru-section h2:hover {
+    color: #fff;
+}
+.guru-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+    padding: 0 80px;
+}
+.row {
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.card-guru {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.card {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+.card::after {
+    content: "";
+    position: absolute;
+    top: 31%; /* Posisikan di tengah */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Agar benar-benar center */
+    width: 290px; /* Sesuaikan dengan ukuran foto */
+    height: 290px; /* Sesuaikan dengan ukuran foto */
+    background-image: url('/images/bg-guru.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2; /* Pastikan background berada di bawah foto */
+    border-radius: 50%;
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 180px; 
+    height: 180px; 
+    object-fit: cover;
+    border-radius: 50%;
+    /* border-radius: 10px;  */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: block; 
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card h5 {
+    font-size: 1.25rem;
+    color: #056839;
+    text-align: center;
+    font-weight: bold;
+    /* margin-top: 20px; */
+}
+.card p {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon {
+    /* margin-top: 10px; */
+    font-size: 30px;
+    color: #056839;  /* Warna biru khas Facebook */
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #212529;  /* Warna lebih gelap saat hover */
+}
+
+/* Footer */
+.footer {
+    background-color: #f0f0f0;
+}
+.footer p {
+     color: #00583a;
+     font-size: 13px;
+}
+
+
+/* Responsif */
+
+/* Responsif untuk layar kecil (HP) */
+@media (max-width: 768px) {
+    /* Sejarah */
+    .sejarah-section .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image-container {
+        max-height: 310px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    /* Guru */
+    .guru-section {
+        padding: 30px 10px;
+        text-align: center;
+    }
+
+    .guru-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Lebih fleksibel */
+        gap: 15px;
+        padding: 0 40px;
+    }
+    .card {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .card::after {
+        top: 27%; /* Posisikan di tengah */
+        left: 50%;
+        transform: translate(-50%, -50%); /* Agar benar-benar center */
+        width: 230px; /* Sesuaikan dengan ukuran foto */
+        height: 230px; /* Sesuaikan dengan ukuran foto */
+        border-radius: 50%;
+    }
+
+}
+
+/* Responsif untuk 375px */
+@media (max-width: 375px) {
+    /* Navbar */
+    .navbar-nav .nav-link {
+        font-size: 12px; 
+    }
+    .navbar-toggler {
+        padding: 5px 10px; 
+    }
+
+    /* Header Profil Sekolah */
+    .header {
+        padding: 20px 10px; 
+        text-align: center; 
+    }
+    .header h1 {
+        font-size: 22px; 
+    }
+    .header p {
+        font-size: 14px; 
+        margin-bottom: 10px;
+    }
+
+    /* Profil Sekolah (Visi dan Misi) */
+    .profile-section {
+        padding: 10px; 
+    }
+    .profile-section ol li {
+        font-size: 14px; 
+        margin-bottom: 8px; 
+    }
+
+    /* Sejarah (Section) */
+    .sejarah-section img {
+        width: 100%; 
+        margin-bottom: 15px; 
+    }
+    .sejarah-section p {
+        font-size: 14px; 
+        padding: 0 5px;
+        text-align: justify;
+    }
+
+    /* Guru (Section) */
+    .guru-section {
+        padding: 20px 5px;
+    }
+    .guru-section .col-12,
+    .guru-section .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .guru-section .card {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 10px;
+        text-align: center;
+    }
+    .footer p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

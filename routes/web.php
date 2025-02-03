@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExportController;
 
 /*
 |-------------------------------------------------------------------------- 
@@ -16,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Homepage and student routes
-Route::get('/', [HomepageController::class, 'index'])->name('homepage.index');
+Route::get('/Homepage', [HomepageController::class, 'index'])->name('homepage.index');
 Route::resource('students', StudentController::class);
 Route::get('/students', [StudentController::class, 'adminIndex'])->name('students.index');
 
@@ -28,7 +29,6 @@ Route::prefix('admin')->name('admin.')->group(function() {
     // Routes for managing students, under the auth:admin middleware
     Route::middleware('auth:admin')->group(function() {
         // Move this line inside the middleware group
-        Route::get('/students', [StudentController::class, 'index'])->name('students.index');
         Route::get('students', [AdminController::class, 'index'])->name('students.index');
         Route::post('students/verify/{id}', [AdminController::class, 'verify'])->name('students.verify');
         Route::get('students/download/{id}', [AdminController::class, 'downloadPrestasi'])->name('students.download');
@@ -39,3 +39,28 @@ Route::prefix('admin')->name('admin.')->group(function() {
         Route::post('logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
+
+Route::get('/', function () {
+    return view('dashboard.beranda');
+});
+
+Route::get('/profil', function () {
+    return view('dashboard.profile');
+});
+
+// Route::get('/pengumuman', function () {
+//     return view('dashboard.pengumuman');
+// });
+
+Route::get('/rdm', function () {
+    return view('dashboard.rdm');
+});
+Route::get('/hubungi', function () {
+    return view('dashboard.hubungi');
+});
+
+Route::get('/ppdb', function () {
+    return view('Homepage.index');
+});
+
+Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel');

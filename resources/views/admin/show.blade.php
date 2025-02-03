@@ -72,7 +72,7 @@
             </table>
             <div class="d-flex mt-3">
                 <a href="{{ route('admin.students.index') }}" class="btn btn-secondary me-5">Kembali</a>
-                <button class="btn btn-primary" onclick="printPage()">Print</button>
+                <button class="btn btn-danger" onclick="printPage()">Print ke PDF</button>
             </div>
         </div>
     </div>

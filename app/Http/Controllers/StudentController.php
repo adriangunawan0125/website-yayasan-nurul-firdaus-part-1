@@ -119,20 +119,29 @@ class StudentController extends Controller
         return redirect()->route('students.index')->with('success', 'Data berhasil diperbarui!');
     }
 
-    // Menghapus data pendaftar
     public function destroy($id)
     {
         $student = Student::findOrFail($id);
-
-        // Hapus file jika ada
-        if ($student->bukti_prestasi && Storage::disk('public')->exists($student->bukti_prestasi)) {
-            Storage::disk('public')->delete($student->bukti_prestasi);
-        }
-
         $student->delete();
-
-        return redirect()->route('students.index')->with('success', 'Data berhasil dihapus!');
+    
+        // Reset ulang ID jika tabel tidak kosong
+        if (Student::count() > 0) {
+            \DB::statement("SET @count = 0;");
+            \DB::statement("UPDATE students SET id = @count := @count + 1;");
+            
+            // Ambil ID terbesar saat ini dan set ulang auto-increment
+            $lastId = \DB::table('students')->max('id'); 
+            $newAutoIncrement = $lastId ? $lastId + 1 : 1; 
+            \DB::statement("ALTER TABLE students AUTO_INCREMENT = $newAutoIncrement;");
+        } else {
+            // Jika tabel kosong, reset ke 1
+            \DB::statement("ALTER TABLE students AUTO_INCREMENT = 1;");
+        }
+    
+        return redirect()->route('students.index')->with('success', 'Data berhasil dihapus dan ID diperbarui!');
     }
+    
+
  
 }
 
