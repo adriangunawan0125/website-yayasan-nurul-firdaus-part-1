@@ -65,6 +65,3 @@ Route::get('/ppdb', function () {
 
 Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel');
 
-Route::get('/kontol', function () {
-    return view('dashboard.kontol');
-});
