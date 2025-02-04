@@ -3,6 +3,8 @@
     
     font-family: "Poppins", sans-serif !important;
 }
+
+
   .custom-rounded {
     border-radius: 15px;
   }
@@ -18,6 +20,7 @@
     transition: all 3.0s ease-in-out; /* Animasi halus */
   }
 
+  
   /* Hover Effect */
   .btn-warning:hover {
     background-color: #e0a800;

@@ -1,6 +1,7 @@
-html, body {
+html,
+body {
     width: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -10,12 +11,12 @@ html {
 }
 
 ::selection {
-    background-color: #00583a; 
-    color: black; 
+    background-color: #00583a;
+    color: black;
 }
 body {
     padding-top: 80px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 /* Navbar Section */
@@ -33,7 +34,7 @@ body {
 
 .nav-link.btn-warning:hover {
     background-color: #f4dc00;
-    color: #212529;
+    color: rgb(255, 255, 255);
 }
 
 .navbar {
@@ -45,7 +46,7 @@ body {
 }
 
 .navbar .nav-link {
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
@@ -64,24 +65,28 @@ body {
 }
 
 /* Profil Sekolah */
-.header{
-    background-image: linear-gradient(rgba(0, 88, 58, 0.8), rgba(0, 88, 58, 0.8)), url('/images/foto1.jpg');
+.header {
+    background-image: linear-gradient(
+            rgba(0, 88, 58, 0.8),
+            rgba(0, 88, 58, 0.8)
+        ),
+        url("/images/foto1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 100% 60%;  
+    background-position: 100% 60%;
     width: 100%;
     max-width: 100%;
-    height: auto; 
+    height: auto;
     object-fit: cover;
 }
 
 .profile-section {
-    background-color: #7AA899;
+    background-color: #7aa899;
     padding: 10px;
     text-align: center;
 }
 
-.profile-section .card-visi-misi{
+.profile-section .card-visi-misi {
     width: 90%;
     max-width: 80%;
     margin: 10px auto;
@@ -90,7 +95,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.5s ease-in-out;
-} 
+}
 
 .card-visi-misi:hover {
     transform: scale(1.01);
@@ -108,9 +113,8 @@ body {
     transition: color 0.5s ease-in-out;
 }
 
-
 .card-visi-misi ol li {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     line-height: 1.5;
     font-size: 18px;
     color: #333;
@@ -118,14 +122,18 @@ body {
 }
 
 .card-visi-misi p {
-    font-size: 18px; 
-    text-align: center
+    font-size: 18px;
+    text-align: center;
 }
 
 /* Animasi Visi Misi */
 @keyframes rotateY-reverse {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(-180deg); } 
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-180deg);
+    }
 }
 
 .icon-rotate {
@@ -138,7 +146,6 @@ body {
     animation: rotateY-reverse 0.8s ease-in-out forwards; /* Hanya sekali dan tetap pada posisi akhir */
 }
 
-
 /* Sejarah */
 .sejarah-section {
     background-color: #f0f0f0;
@@ -150,7 +157,6 @@ body {
     font-size: 2rem;
     text-align: center;
     position: relative;
-    
 }
 
 .sejarah-section .row {
@@ -159,7 +165,6 @@ body {
     justify-content: center;
     gap: 20px;
 }
-
 
 .image-container {
     width: 100%;
@@ -228,7 +233,7 @@ body {
     min-height: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 20px;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -247,7 +252,7 @@ body {
     transform: translate(-50%, -50%); /* Agar benar-benar center */
     width: 290px; /* Sesuaikan dengan ukuran foto */
     height: 290px; /* Sesuaikan dengan ukuran foto */
-    background-image: url('/images/bg-guru.png'); 
+    background-image: url("/images/bg-guru.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -255,20 +260,19 @@ body {
     border-radius: 50%;
 }
 
-
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
-    width: 180px; 
-    height: 180px; 
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border-radius: 50%;
     /* border-radius: 10px;  */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: block; 
+    display: block;
     margin: 0 auto;
     margin-top: 20px;
     position: relative;
@@ -297,12 +301,12 @@ body {
 .social-icon {
     /* margin-top: 10px; */
     font-size: 30px;
-    color: #056839;  /* Warna biru khas Facebook */
+    color: #056839; /* Warna biru khas Facebook */
     transition: color 0.3s ease;
 }
 
 .social-icon:hover {
-    color: #212529;  /* Warna lebih gelap saat hover */
+    color: #212529; /* Warna lebih gelap saat hover */
 }
 
 /* Footer */
@@ -310,10 +314,9 @@ body {
     background-color: #f0f0f0;
 }
 .footer p {
-     color: #00583a;
-     font-size: 13px;
+    color: #00583a;
+    font-size: 13px;
 }
-
 
 /* Responsif */
 
@@ -344,7 +347,10 @@ body {
 
     .guru-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Lebih fleksibel */
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(180px, 1fr)
+        ); /* Lebih fleksibel */
         gap: 15px;
         padding: 0 40px;
     }
@@ -368,48 +374,47 @@ body {
         height: 230px; /* Sesuaikan dengan ukuran foto */
         border-radius: 50%;
     }
-
 }
 
 /* Responsif untuk 375px */
 @media (max-width: 375px) {
     /* Navbar */
     .navbar-nav .nav-link {
-        font-size: 12px; 
+        font-size: 12px;
     }
     .navbar-toggler {
-        padding: 5px 10px; 
+        padding: 5px 10px;
     }
 
     /* Header Profil Sekolah */
     .header {
-        padding: 20px 10px; 
-        text-align: center; 
+        padding: 20px 10px;
+        text-align: center;
     }
     .header h1 {
-        font-size: 22px; 
+        font-size: 22px;
     }
     .header p {
-        font-size: 14px; 
+        font-size: 14px;
         margin-bottom: 10px;
     }
 
     /* Profil Sekolah (Visi dan Misi) */
     .profile-section {
-        padding: 10px; 
+        padding: 10px;
     }
     .profile-section ol li {
-        font-size: 14px; 
-        margin-bottom: 8px; 
+        font-size: 14px;
+        margin-bottom: 8px;
     }
 
     /* Sejarah (Section) */
     .sejarah-section img {
-        width: 100%; 
-        margin-bottom: 15px; 
+        width: 100%;
+        margin-bottom: 15px;
     }
     .sejarah-section p {
-        font-size: 14px; 
+        font-size: 14px;
         padding: 0 5px;
         text-align: justify;
     }

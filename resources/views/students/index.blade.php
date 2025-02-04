@@ -116,7 +116,7 @@
                 <div class="col-md-12">
                     <label class="form-label">Program Pilihan</label>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" id="mts" name="program_pilihan" value="MTs" required>
+                        <input class="form-check-input" type="radio" id="mts" name="program_pilihan" value="MTS" required>
                         <label class="form-check-label" for="mts">MTs</label>
                     </div>
                     <div class="form-check">
@@ -218,6 +218,11 @@
         <div class="col text-center">
           <p class="fs-5 mb-0">Copyright &copy; 2025 | YAYASAN NURUL FIRDAUS</p>
           <p class="fs-5 mb-0">Design by MAGANG TIKSI USM-23</p>
+          <p class="fs-6 mb-0">
+            <a style="text-decoration: none; color: inherit;" href="{{ route('admin.login') }}">
+              Login Admin
+            </a>
+          </p>
         </div>
       </div>
     </div>

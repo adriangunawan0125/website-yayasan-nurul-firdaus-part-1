@@ -12,7 +12,7 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top  bg-gradient navbar-light fixed-top px-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top  bg-gradient navbar-dark fixed-top px-5">
         <div class="container-fluid">
             <img src="{{ asset('asset/logo_nufi.png') }}" alt="Nurul Firdaus" width="60">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                             <li><a class="dropdown-item" href="{{url('/profil#sejarah-section')}}">Sejarah</a></li>
                             <li><a class="dropdown-item" href="{{url('/profil#guru-section')}}">Data Guru</a></li>
                         </ul>
-                    </li>
+                    </li> 
                     <li class="nav-item">
                         <a class="nav-link active ms-5 fw-bold" aria-current="page" href="{{ url('/#berita-section') }}">BERITA</a>
                     </li>

@@ -19,47 +19,44 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top  bg-gradient">
-        <div class="container-fluid">
-            <!-- Logo -->
-            <a class="navbar-brand ms-5" href="#">
-                <img src="{{ asset('asset/logo_nufi.png') }}" alt="Logo" width="70" height="70">
-            </a>
-            <!-- Toggler -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Menu Items -->
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav mx-auto gap-lg-5 gap-3"> <!-- Gunakan gap kecil di layar kecil -->
-                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}"
-                        href="{{ url('/') }}"><b>BERANDA</b></a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle fw-bold" href="{{url('/profil')}}"
-                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">PROFIL</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="{{ url('profil') }}#profile-section">Visi Misi</a></li>
-                            <li><a class="dropdown-item" href="{{ url('profil#sejarah-section') }}">Sejarah</a></li>
-                            <li><a class="dropdown-item" href="{{url('profile#data-pengajar')}}">Data Guru</a></li>
-                        </ul>
-                    </li>
-                    <a class="nav-link {{ request()->is('berita') ? 'active' : '' }}"
-                        href="#berita-section"><b>BERITA</b></a>
 
-                    <a class="nav-link {{ request()->is('pengumuman') ? 'active' : '' }}"
-                        href="{{ url('/Homepage#jadwal') }}"><b>PENGUMUMAN</b></a>
-                    <a class="nav-link {{ request()->is('layanan online') ? 'active' : '' }}"
-                        href="#layanan-online"><b>LAYANAN ONLINE</b></a>
-                </div>
-                <div class="navbar-nav ms-lg-auto mt-3 mt-lg-0">
-                    <a class="nav-link btn btn-warning text-white px-4 py-2 {{ request()->is('ppdb') ? 'active' : '' }}"
-                        href="{{ url('/Homepage') }}"><b>PPDB</b></a>
-                </div>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top bg-gradient navbar-light fixed-top px-5">
+    <div class="container-fluid">
+        <img src="{{ asset('asset/logo_nufi.png') }}" alt="Nurul Firdaus" width="60">
+        <!-- Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav mx-auto gap-lg-5 gap-3">
+                <a class="nav-link" href="{{ url('/') }}"><b>BERANDA</b></a>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle profil-bold" href="{{url('/profil')}}"
+                        id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">PROFIL</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item fs-6" href="{{ url('profil') }}#profile-section">VISI MISI</a></li>
+                        <li><a class="dropdown-item fs-6" href="{{ url('profil#sejarah-section') }}">SEJARAH</a></li>
+                        <li><a class="dropdown-item fs-6" href="{{url('profile#data-pengajar')}}">DATA GURU</a></li>
+                    </ul>
+                </li>
+
+                <a class=" fs-6 nav-link " href="#berita-section"><b>BERITA</b></a>
+                <a class="fs-6 nav-link " href="{{ url('/Homepage#jadwal') }}"><b>PENGUMUMAN</b></a>
+                <a class="fs-6 nav-link " href="#layanan-online"><b>LAYANAN ONLINE</b></a>
+            </div>
+            <div class="navbar-nav ms-lg-auto mt-3 mt-lg-0">
+                <a class="nav-link btn btn-warning fs-6 text-white px-4 py-2 {{ request()->is('ppdb') ? 'active' : '' }}"
+                    href="{{ url('/Homepage') }}"><b>PPDB</b></a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
+
 <!-- Carousel -->
 <div class="carousel-container">
     <div id="carouselExample" class="carousel slide carousel-shadow" data-bs-ride="carousel" data-bs-interval="3000">
@@ -106,7 +103,7 @@
  {{-- Sambutan section --}}
 <div class="sambutan-section animated-section">
     <h2 class="sambutan-title">
-        <span>Sambutan Kepala Sekolah</span>
+        <span class="fs-1 fw-bold">Sambutan Kepala Sekolah</span>
     </h2>
     <div class="images my-4">
         <div class="image-frame">
@@ -135,7 +132,7 @@
         <div class="row" style="margin-bottom: 3rem;">
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <div class="image-frame">
-                    <img src="{{ asset('images/nurul.jpeg') }}" alt="Tentang Kami Image" class="img-fluid">
+                    <img src="{{ asset('images\WhatsApp Image 2025-02-03 at 15.30.28_ece6027d.jpg') }}" alt="Tentang Kami Image" class="img-fluid">
                 </div>
             </div>
             <div class="col-md-6">
@@ -198,7 +195,7 @@
         </div>
         <!-- Show More Button -->
         <div class="show-more-btn">
-            <a href="{{ url('profil') }}">
+            <a href="{{ url('profil#guru-section') }}">
                 <span>Show More</span>
             </a>
         </div>

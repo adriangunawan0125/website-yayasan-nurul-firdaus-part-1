@@ -139,13 +139,9 @@
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <p class="fs-5 mb-0">Copyright &copy; 2025 | YAYASAN NURUL FIRDAUS</p>
-        <p class="fs-5 mb-0">Design by MAGANG TIKSI USM-23</p>
-        <p class="fs-5 mb-0">
-          <a style="text-decoration: none; color: inherit;" href="{{ route('admin.login') }}">
-            Login Admin
-          </a>
-        </p>
+        <p class="fs-6 mb-0">Copyright &copy; 2025 | YAYASAN NURUL FIRDAUS</p>
+        <p class="fs-6 mb-0">Design by MAGANG TIKSI USM-23</p>
+       
       </div>
     </div>
   </div>
