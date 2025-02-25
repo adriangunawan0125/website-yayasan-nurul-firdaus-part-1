@@ -5,39 +5,57 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
+use DB;
 
 class StudentController extends Controller
 {
     
     public function index()
     {
-        $students = Student::paginate(5); // Ambil data dari database
+        $students = Student::paginate(5); 
         return view('students.index', compact('students'));
     }
     
 
     public function adminIndex(Request $request)
     {
-        $query = $request->input('search');
+        $query = Student::query();
 
-        // Filter berdasarkan pencarian
-        if ($query) {
-            $students = Student::where('nama_lengkap', 'like', '%' . $query . '%')->paginate(5);
-        } else {
-            $students = Student::paginate(5);
+        // Filter berdasarkan nama
+        if ($request->filled('search')) {
+            $query->where('nama_lengkap', 'LIKE', '%' . $request->search . '%');
         }
 
-        // Menggunakan tampilan di folder `students/index`
-        return view('students.index', compact('students', 'query'));
-    }
+        // Filter berdasarkan rentang tanggal
+        if ($request->filled('start_date') && $request->filled('end_date')) {
+            $startDate = Carbon::parse($request->start_date)->startOfDay();
+            $endDate = Carbon::parse($request->end_date)->endOfDay();
+            $query->whereBetween('created_at', [$startDate, $endDate]);
+        }
 
-    // Menampilkan form pendaftaran
-    public function create()
-    {
-        return view('students.create');
-    }
+        // Filter berdasarkan tahun
+        if ($request->filled('year')) {
+            $query->whereYear('created_at', $request->year);
+        }
 
-    // Menyimpan data pendaftar baru
+        $students = $query->paginate(10)->appends($request->query()); // Untuk menjaga filter saat pindah halaman
+
+        // Jika request berasal dari AJAX, kirim data sebagai JSON
+        if ($request->ajax()) {
+            return response()->json([
+                'students' => view('students.table', compact('students'))->render()
+            ]);
+        }
+
+        // Ambil daftar tahun yang tersedia di database (tanpa duplikat)
+        $years = Student::select(DB::raw('YEAR(created_at) as year'))
+                        ->distinct()
+                        ->orderBy('year', 'desc')
+                        ->pluck('year');
+
+        return view('students.index', compact('students', 'years'));
+    }
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -71,14 +89,14 @@ class StudentController extends Controller
         return redirect()->route('students.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    // Menampilkan form edit data
+   
     public function edit($id)
     {
         $student = Student::findOrFail($id);
         return view('students.edit', compact('student'));
     }
 
-    // Memperbarui data pendaftar
+   
     public function update(Request $request, $id)
     {
         $student = Student::findOrFail($id);
@@ -108,7 +126,6 @@ class StudentController extends Controller
             $filePath = $file->storeAs('uploads/bukti_prestasi', $fileName, 'public');
             $validated['bukti_prestasi'] = $filePath;
 
-            // Hapus file lama jika ada
             if ($student->bukti_prestasi && Storage::disk('public')->exists($student->bukti_prestasi)) {
                 Storage::disk('public')->delete($student->bukti_prestasi);
             }
@@ -124,7 +141,6 @@ class StudentController extends Controller
         $student = Student::findOrFail($id);
         $student->delete();
     
-        // Reset ulang ID jika tabel tidak kosong
         if (Student::count() > 0) {
             \DB::statement("SET @count = 0;");
             \DB::statement("UPDATE students SET id = @count := @count + 1;");

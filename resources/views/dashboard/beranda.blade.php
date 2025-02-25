@@ -40,7 +40,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item fs-6" href="{{ url('profil') }}#profile-section">VISI MISI</a></li>
                         <li><a class="dropdown-item fs-6" href="{{ url('profil#sejarah-section') }}">SEJARAH</a></li>
-                        <li><a class="dropdown-item fs-6" href="{{url('profile#data-pengajar')}}">DATA GURU</a></li>
+                        <li><a class="dropdown-item fs-6" href="{{url('profil#guru-section')}}">DATA GURU</a></li>
                     </ul>
                 </li>
 

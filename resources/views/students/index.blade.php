@@ -147,11 +147,8 @@
   </section>
 
 
-
-
-
 {{-- Data Pendaftar --}}
-<section data-aos="fade-up" >
+<section data-aos="fade-up">
     <div id="datapendaftar" class="container mb-5">
         <div class="card">
             <div class="card-header text-center">
@@ -159,56 +156,94 @@
             </div>
             <div class="card-body">
 
-              {{-- Form Pencarian --}}
-    <form method="GET" action="{{ route('students.index') }}" class="mb-3 d-flex">
-        <input type="text" name="search" class="form-control me-2" placeholder="Cari Nama..." value="{{ old('search', $query ?? '') }}" style="max-width: 300px;">
-        <button class="btn btn-success" type="submit">Cari</button>
-    </form>
-    
-    
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead class="bg-success text-light">
-                            <tr class="text-center">
-                                <th>No</th>
-                                <th>Nama</th>
-                                <th>NISN</th>
-                                <th>Asal Sekolah</th>
-                                <th>Program Pilihan</th>
-                                <th>Status Verifikasi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($students as $student)
-                            <tr class="text-center">
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $student->nama_lengkap }}</td>
-                                <td>{{ $student->nisn }}</td>
-                                <td>{{ $student->sekolah_asal }}</td>
-                                <td>{{ $student->program_pilihan }}</td>
-                                <td>
-                                    {{--  status_verifikasi --}}
-                                    @if($student->status_verifikasi === 'Terverifikasi' || $student->status_verifikasi === 'Sudah Diverifikasi')
-                                        <span class="badge bg-success">Sudah Terverifikasi</span>
-                                    @else
-                                        <span class="badge bg-danger">Belum Terverifikasi</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                {{-- filtwer --}}
+                <form id="filter-form" method="GET" action="{{ route('students.index') }}" class="mb-3">
+                    <div class="row g-2"> <!-- Gunakan grid Bootstrap -->
+                        <div class="col-md-3 col-12">
+                            <input type="text" name="search" class="form-control w-100" placeholder="Cari Nama..."
+                                value="{{ request('search') }}">
+                        </div>
+                
+                        <div class="col-md-2 col-6">
+                            <input type="date" name="start_date" class="form-control w-100" value="{{ request('start_date') }}">
+                        </div>
+                
+                        <div class="col-md-2 col-6">
+                            <input type="date" name="end_date" class="form-control w-100" value="{{ request('end_date') }}">
+                        </div>
+                
+                        <div class="col-md-2 col-12">
+                            <select name="year" class="form-control w-100">
+                                <option value="">Semua Tahun</option>
+                                @foreach($years as $year)
+                                    <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                                        {{ $year }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                
+                        <div class="col-md-3 col-12 d-flex gap-2">
+                            <button class="btn btn-success w-100" type="submit">Filter</button>
+                            <button id="resetButton" class="btn btn-secondary w-100" type="button">Reset</button>
+                        </div>
+                    </div>
+                </form>        
+                
+                <div id="students-table">
+                    @include('students.table')
                 </div>
             </div>
         </div>
     </div>
-    
-    
-  
-    <div class="d-flex justify-content-center">
-        {{ $students->links() }}
-    </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    // Event saat user mengubah filter
+    $('#filter-form').on('submit', function(e){
+        e.preventDefault(); // Hindari refresh halaman
+
+        $.ajax({
+            url: "{{ route('students.index') }}",
+            type: "GET",
+            data: $(this).serialize(), // Kirim data form
+            beforeSend: function(){
+                $('#students-table').html('<p class="text-center">Loading...</p>'); // Loading message
+            },
+            success: function(response){
+                $('#students-table').html(response.students); // Update tabel dengan data baru
+            },
+            error: function(){
+                alert('Terjadi kesalahan, coba lagi.');
+            }
+        });
+    });
+});
+
+document.getElementById("resetButton").addEventListener("click", function() {
+                        // Kosongkan semua input dalam form
+                        document.querySelectorAll("#filter-form input, #filter-form select").forEach(element => {
+                            element.value = "";
+                        });
+                
+                        // Kirim permintaan AJAX untuk reset filter
+                        $.ajax({
+                            url: "{{ route('students.index') }}",
+                            type: "GET",
+                            beforeSend: function(){
+                                $('#students-table').html('<p class="text-center">Loading...</p>'); // Tampilan loading
+                            },
+                            success: function(response){
+                                $('#students-table').html(response.students); // Update tabel dengan data asli
+                            },
+                            error: function(){
+                                alert('Terjadi kesalahan, coba lagi.');
+                            }
+                        });
+                    });
+</script>
 
 
 {{-- footer --}}
