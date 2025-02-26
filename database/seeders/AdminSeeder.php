@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Admin;  // Import model Admin
-use Illuminate\Support\Facades\Hash;  // Import Hash facade
+use App\Models\Admin;  
+use Illuminate\Support\Facades\Hash;  
 
 class AdminSeeder extends Seeder
 {
@@ -15,7 +15,7 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        Admin::truncate(); // Kosongkan tabel
+        Admin::truncate();
     
         Admin::create([
             'name' => 'Super Admin',
