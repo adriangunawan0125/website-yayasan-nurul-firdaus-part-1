@@ -1,12 +1,54 @@
 @extends('admin.layout')
 
 @section('content')
-<nav class="navbar navbar-light shadow-sm">
-    <div class="container-fluid d-flex align-items-center">
-        <img src="{{asset('asset\YAYASAN_NUFI[1].png')}}" alt="Logo" class="me-2" style="height: 100px; width:70px;">
-        <a class="navbar-brand text-success fw-bold" href="#">YAYASAN NURUL FIRDAUS</a>
+<style>
+    .navbar-custom {
+        background-color: #005e2e;
+    }
+    .nav-link:hover {
+        color: yellow !important;
+    }
+    .ppdb-button {
+        background-color: yellow;
+        color: black !important;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 5px 15px;
+    }
+</style>
+{{-- navbar --}}
+<nav class="navbar navbar-expand-lg navbar-custom mb-3">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <i class="fa-solid fa-door-open" style="color:  #ffc107"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item fw-bold ms-5">
+                    <a class="nav-link  text-light" href="{{url('admin/dashboard')}}">JADWAL</a>
+                </li>
+                <li class=" ms-5 nav-item fw-bold">
+                    <a class="nav-link text-light" href="#">PROGRAM</a>
+                </li>
+                {{-- <li class="nav-item dropdown"> 
+                    <a class="nav-link dropdown-toggle ms-5 fw-bold text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROGRAM PILIHAN</a>
+                    <ul class="dropdown-menu ms-5" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item fw-bold" href="{{url('/profil#profile-section')}}">MTS</a></li>
+                        <li><a class="dropdown-item fw-bold" href="{{url('/profil#sejarah-section')}}">MA</a></li>
+                    </ul>
+                </li>  --}}
+                <li class=" ms-5 nav-item fw-bold">
+                    <a class="nav-link active text-light" href="#">DATA PPDB</a>
+                </li>
+            </ul>
+            <a href="{{url('admin/students')}}" class="btn btn-info fw-bold text-light">PPDB</a>
+        </div>
     </div>
 </nav>
+{{-- PPDB --}}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h1 class="fw-bold text-dark">DAFTAR PPDB</h1>

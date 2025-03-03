@@ -1,6 +1,10 @@
 @extends('Homepage.layout')
 @extends('Homepage.navbar')
 @section('content')
+@php
+    // Ambil data gambar terbaru dari database
+    $gambar = \App\Models\GambarMenuPPDB::first();
+@endphp
 
 <style>
   .custom-rounded {
@@ -9,27 +13,27 @@
 
   .bg-custom {
     position: relative;
-    background-image: url('/asset/Group 37209.png');
+    background-image: url('{{ asset($gambar->background ?? 'asset/Group 37209.png') }}');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
+    
+  }
 
-.bg-custom::before {
+  .bg-custom::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); 
-}
+    background: rgba(0, 0, 0, 0.5); 
+  }
 
-.bg-custom .container {
+  .bg-custom .container {
     position: relative;
     z-index: 1;
-}
-
+  }
 
   .btn-warning {
     color: #00583a;
@@ -53,6 +57,7 @@
   </div>
 </section>
 
+
 <!-- Jadwal -->
 <section data-aos="fade-up" id="jadwal" class="bg-white text-center py-5">
   <div class="container">
@@ -62,7 +67,7 @@
 </section>
 
 <!-- MTS dan MA -->
-<section data-aos="fade-up" id="pilihan" class="bg-custom text-white text-center py-5 mt-5 mb-1">
+<section data-aos="fade-up" id="pilihan" class="bg-success text-white text-center py-5 mt-5 mb-1">
   <div class="container">
     <h2 class="fw-bold mb-5">PROGRAM PILIHAN</h2>
     <div class="row justify-content-center">

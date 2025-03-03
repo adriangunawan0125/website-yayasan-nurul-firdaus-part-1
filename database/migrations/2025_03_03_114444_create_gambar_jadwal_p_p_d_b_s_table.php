@@ -12,11 +12,14 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::table('pendaftaran', function (Blueprint $table) {
-            $table->string('status_verifikasi')->default('Tidak Terverifikasi')->after('program_pilihan');
-        });
-    }
+{
+    Schema::create('gambar_jadwal_p_p_d_b_s', function (Blueprint $table) {
+        $table->id();
+        $table->string('gambar'); // Menyimpan path gambar jadwal
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.
@@ -25,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('pendaftaran', function (Blueprint $table) {
-            $table->dropColumn('status_verifikasi');
-        });
+        Schema::dropIfExists('gambar_jadwal_p_p_d_b_s');
     }
 };

@@ -41,7 +41,7 @@
         <img class="ms-4" src="{{ asset('asset/logo_nufi.png') }}" alt="Logo" style="max-width: 60px;">
     </div>
     <a href="{{ url('/') }}" class="text-white" style="font-size: 24px; text-decoration: none;">
-        <i class="fas fa-arrow-left me-4" style="color: yellow;"></i>
+        <img src="{{asset('asset/icon-pintu.png')}}" style="width: 30px;" class="me-4" alt="">
     </a>
 </nav>
 

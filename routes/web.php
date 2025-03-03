@@ -5,6 +5,9 @@ use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExportController;
+use App\Http\Controllers\GambarMenuPPDBController;
+
+
 
 /*
 |-------------------------------------------------------------------------- 
@@ -24,6 +27,12 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::post('login', [AdminController::class, 'login'])->name('login.post');
 
     Route::middleware('auth:admin')->group(function() {
+        Route::get('/dashboard', function () {
+            return view('admin.AdminPPDB');
+        });
+        Route::get('/ubah-background', [GambarMenuPPDBController::class, 'index'])->name('ubah-background');
+        Route::post('/ubah-background', [GambarMenuPPDBController::class, 'update'])->name('update-background');
+        
         Route::get('students', [AdminController::class, 'index'])->name('students.index');
         Route::post('students/verify/{id}', [AdminController::class, 'verify'])->name('students.verify');
         Route::get('students/download/{id}', [AdminController::class, 'downloadPrestasi'])->name('students.download');

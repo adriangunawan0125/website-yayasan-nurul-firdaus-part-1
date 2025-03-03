@@ -1,8 +1,8 @@
 @extends('admin.layout')
 
 @section('content')
-<nav class="navbar navbar-light shadow-sm">
-    <div class="container-fluid d-flex align-items-center">
+<nav class="navbar navbar-light shadow-sm w-100">
+    <div class=" d-flex align-items-center w-100">
         <img src="{{asset('asset\YAYASAN_NUFI[1].png')}}" alt="Logo" class="me-2" style="height: 100px; width:70px;">
         <a class="navbar-brand text-success fw-bold" href="#">YAYASAN NURUL FIRDAUS</a>
     </div>
