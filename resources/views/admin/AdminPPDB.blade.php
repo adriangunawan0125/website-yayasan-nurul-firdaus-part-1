@@ -55,18 +55,18 @@
       </button>
       <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                  <a class="nav-link active ms-5" style="font-weight: 750 !important" aria-current="page" href="{{url('/')}}">Jadwal</a>
+              <li class="nav-item text-light">
+                  <a class="nav-link active ms-5 text-light" style="font-weight: 750 !important" aria-current="page" href="{{url('/admin/dashboardPPDB#jadwal')}}">Jadwal</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link active ms-5" aria-current="page" style="font-weight: 750 !important" href="#jadwal">Program</a>
+              <li class="nav-item text-light">
+                  <a class="nav-link active ms-5 text-light" aria-current="page" style="font-weight: 750 !important" href="#pilihan">Program</a>
               </li>
-              <li class="nav-item">
-                  <a class="nav-link active ms-5 fw-bold" aria-current="page" style="font-weight: 750 !important" href="{{ url('/Homepage#jadwal') }}">Data PPDB</a>
+              <li class="nav-item text-light">
+                  <a class="nav-link active ms-5 fw-bold text-light " aria-current="page" style="font-weight: 750 !important" href="{{ url('/admin/students') }}">Data PPDB</a>
               </li>
           </ul>
 
-                  <a href="{{ url('/students') }}"><button type="button" class="fw-bold btn btn-info me-5">PPDB</button></a>
+                  <a href="{{ url('/admin/dashboardPPDB') }}"><button type="button" class="fw-bold btn btn-info me-5 text-light">PPDB</button></a>
       </div>
   </div>
 </nav>
@@ -94,7 +94,11 @@
 <section data-aos="fade-up" id="jadwal" class="bg-white text-center py-5">
   <div class="container">
     <h3 class="fw-bold text-success me-2 mb-5">JADWAL PENDAFTARAN</h3>
-   <!-- rubah jadwal di baris ini -->  <img src="{{ asset('asset/Screenshot 2025-01-18 120126.png') }}" class="img-fluid"> 
+    <div class="d-flex flex-column align-items-center mt-5 mb-5">
+      <a href="{{ url('/admin/ubah-jadwal') }}" class="btn fw-bold btn-warning btn-lg w-25 custom-rounded mt-5 mb-4">
+          Ubah Gambar
+      </a>
+  </div>
   </div>
 </section>
 

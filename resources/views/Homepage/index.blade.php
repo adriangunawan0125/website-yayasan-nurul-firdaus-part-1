@@ -2,7 +2,7 @@
 @extends('Homepage.navbar')
 @section('content')
 @php
-    // Ambil data gambar terbaru dari database
+  
     $gambar = \App\Models\GambarMenuPPDB::first();
 @endphp
 
@@ -44,27 +44,53 @@
   }
 </style>
 
+
+
+   
 <!-- Menu PPDB -->
 <section id="dashboard" class="bg-custom text-white text-center mt-2 pt-5 py-5">
   <div class="container pt-5">
     <img src="{{ asset('asset/logo_nufi.png') }}" alt="Logo" class="mb-3 pt-3" style="width: 150px;">
-    <h1 class="fw-bold">PPDB ONLINE</h1>
-    <h2 class="fw-light fw-bold">YAYASAN NURUL FIRDAUS</h2>
-    <div class="d-flex flex-column align-items-center mt-4">
-      <a href="{{ url('/students') }}" class="btn fw-bold btn-warning btn-lg mb-4 w-50 custom-rounded">FORM PENDAFTARAN</a>
-      <a href="{{ url('/students#datapendaftar') }}" class="btn fw-bold btn-warning btn-lg w-50 custom-rounded">DATA PENDAFTAR</a>
-    </div>
+    <h1 class="fw-bold mb-2">Selamat Datang di PPDB Online</h1>
+    <h4 class="fw-bold">Yayasan Nurul Firdaus</h4>
+      {{-- //style="background-color: #FFD700; border-radius: 10px;" ntar benerin tombolnya udh pusing gw jing --}} 
+      <div class="container">
+        <div class="row justify-content-center gap-3 mt-4">
+          <div class="col-10 col-md-3">
+            <a href="{{ url('/students') }}" 
+               class="btn fw-bold text-dark py-2 d-flex align-items-center justify-content-center"
+               style="background-color: #FFD700; border-radius: 10px; gap: 8px;">
+              <span style="font-size: 1.2rem;">📋</span> Form Pendaftaran
+            </a>
+          </div>
+          <div class="col-10 col-md-3">
+            <a href="{{ url('/students#datapendaftar') }}" 
+               class="btn fw-bold text-white py-2 d-flex align-items-center justify-content-center"
+               style="background-color: #3B82F6; border-radius: 10px; gap: 8px;">
+              <span style="font-size: 1.2rem;">👤</span> Data Pendaftar
+            </a>
+          </div>
+        </div>
+      </div>
+      
+
   </div>
 </section>
 
+
+
+@php
+    $gambar = App\Models\GambarJadwalPPDB::latest()->first();
+@endphp
 
 <!-- Jadwal -->
 <section data-aos="fade-up" id="jadwal" class="bg-white text-center py-5">
   <div class="container">
     <h3 class="fw-bold text-success me-2 mb-5">JADWAL PENDAFTARAN</h3>
-   <!-- rubah jadwal di baris ini -->  <img src="{{ asset('asset/Screenshot 2025-01-18 120126.png') }}" class="img-fluid"> 
+    <img src="{{ $gambar ? asset('storage/' . $gambar->gambar) : asset('asset/default.png') }}" class="img-fluid">
   </div>
 </section>
+
 
 <!-- MTS dan MA -->
 <section data-aos="fade-up" id="pilihan" class="bg-success text-white text-center py-5 mt-5 mb-1">

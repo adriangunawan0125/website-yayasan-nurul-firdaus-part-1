@@ -17,7 +17,7 @@
     }
 </style>
 {{-- navbar --}}
-<nav class="navbar navbar-expand-lg navbar-custom mb-3">
+<nav class="navbar navbar-expand-lg navbar-custom mb-3 py-3">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             <i class="fa-solid fa-door-open" style="color:  #ffc107"></i>
@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item fw-bold ms-5">
-                    <a class="nav-link  text-light" href="{{url('admin/dashboard')}}">JADWAL</a>
+                    <a class="nav-link  text-light" href="{{url('admin/dashboardPPDB')}}">JADWAL</a>
                 </li>
                 <li class=" ms-5 nav-item fw-bold">
                     <a class="nav-link text-light" href="#">PROGRAM</a>
@@ -44,7 +44,7 @@
                     <a class="nav-link active text-light" href="#">DATA PPDB</a>
                 </li>
             </ul>
-            <a href="{{url('admin/students')}}" class="btn btn-info fw-bold text-light">PPDB</a>
+            <a href="{{url('/admin/dashboardPPDB')}}" class="btn btn-info fw-bold text-light">PPDB</a>
         </div>
     </div>
 </nav>

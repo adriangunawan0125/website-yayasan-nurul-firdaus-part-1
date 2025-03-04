@@ -6,6 +6,9 @@ use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\GambarMenuPPDBController;
+use App\Http\Controllers\GambarJadwalPPDBController;
+
+
 
 
 
@@ -18,26 +21,27 @@ use App\Http\Controllers\GambarMenuPPDBController;
 | contains the "web" middleware group. Now create something great!
 | 
 */
-Route::get('/Homepage', [HomepageController::class, 'index'])->name('homepage.index');
+Route::get('/Homepage', [HomepageController::class, 'index'])->name('homepage.index'); //route homepage/beranda PPDB
 Route::resource('students', StudentController::class);
-Route::get('/students', [StudentController::class, 'adminIndex'])->name('students.index');
+Route::get('/students', [StudentController::class, 'adminIndex'])->name('students.index'); //route formulir ppdb
 
 Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('login', [AdminController::class, 'showLoginForm'])->name('login');
     Route::post('login', [AdminController::class, 'login'])->name('login.post');
 
-    Route::middleware('auth:admin')->group(function() {
-        Route::get('/dashboard', function () {
+    Route::middleware('auth:admin')->group(function() {    //route admin all fitur
+        Route::get('/dashboardPPDB', function () {
             return view('admin.AdminPPDB');
         });
-        Route::get('/ubah-background', [GambarMenuPPDBController::class, 'index'])->name('ubah-background');
+        Route::get('/ubah-background', [GambarMenuPPDBController::class, 'index'])->name('ubah-background');  //ganti background di beranda PPDB section menu
         Route::post('/ubah-background', [GambarMenuPPDBController::class, 'update'])->name('update-background');
-        
-        Route::get('students', [AdminController::class, 'index'])->name('students.index');
-        Route::post('students/verify/{id}', [AdminController::class, 'verify'])->name('students.verify');
-        Route::get('students/download/{id}', [AdminController::class, 'downloadPrestasi'])->name('students.download');
-        Route::delete('students/{id}', [AdminController::class, 'destroy'])->name('students.destroy');
-        Route::get('students/{id}', [AdminController::class, 'show'])->name('students.show');
+        Route::get('/ubah-jadwal', [GambarJadwalPPDBController::class, 'edit'])->name('jadwal.edit'); //gantu gambar jadwal di beranda PPDB
+        Route::put('/ubah-jadwal', [GambarJadwalPPDBController::class, 'update'])->name('jadwal.update');
+        Route::get('students', [AdminController::class, 'index'])->name('students.index'); //data PPDB
+        Route::post('students/verify/{id}', [AdminController::class, 'verify'])->name('students.verify'); //verifikasi PPDB
+        Route::get('students/download/{id}', [AdminController::class, 'downloadPrestasi'])->name('students.download'); //download file prestasi PPDB
+        Route::delete('students/{id}', [AdminController::class, 'destroy'])->name('students.destroy'); // hapus data PPDB
+        Route::get('students/{id}', [AdminController::class, 'show'])->name('students.show'); //lohata detail dataa PPDB
         Route::post('logout', [AdminController::class, 'logout'])->name('logout');
     });
 });
@@ -65,5 +69,6 @@ Route::get('/ppdb', function () {
     return view('Homepage.index');
 });
 
-Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel');
+Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel'); //route export excel PPDB 
+
 
